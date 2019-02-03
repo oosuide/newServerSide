@@ -1,16 +1,23 @@
 {
-  "name": "newServerSide",
+  "name": "y",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm run start --prefix \"../\" ",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "keywords": [],
-  "author": "",
+  "engines": {
+    "node": "8.11.3"
+  },
+  "author": "deba",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
     "express": "^4.16.4",
     "nodemailer": "^5.1.1",
     "request": "^2.88.0"
