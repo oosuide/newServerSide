@@ -56,7 +56,8 @@ transporter.verify((error, success) => {
 app.get("/", (req, res) => {
   res.json({
     countries: getCountryCode.countries,
-    domainName: process.env.DOMAIN_NAME_ON_MESSAGE || ""
+    domainName: process.env.DOMAIN_NAME_ON_MESSAGE || "",
+    siteKey: process.env.RECAPTCHA_SITE_KEY || ""
   });
 });
 app.get("/api/thankyoudata", (req, res) => {
