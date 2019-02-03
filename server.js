@@ -56,14 +56,14 @@ transporter.verify((error, success) => {
 app.get("/", (req, res) => {
   res.json({
     countries: getCountryCode.countries,
-    domainName: process.env.DOMAIN_NAME_ON_MESSAGE || "Hello"
+    domainName: process.env.DOMAIN_NAME_ON_MESSAGE || ""
   });
 });
 app.get("/api/thankyoudata", (req, res) => {
   res.json({
     thankYouMessage: {
-      ThankYouHeading: process.env.THANK_YOU_HEADING || "Thank You",
-      ThankYouBody: process.env.THANKYOUBODY || "You will be contacted Soon"
+      ThankYouHeading: process.env.THANK_YOU_HEADING || "",
+      ThankYouBody: process.env.THANKYOUBODY || ""
     }
   });
 });
