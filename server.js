@@ -56,14 +56,14 @@ transporter.verify((error, success) => {
 app.get("/", (req, res) => {
   res.json({
     countries: getCountryCode.countries,
-    domainName: process.env.DOMAIN_NAME_ON_MESSAGE
+    domainName: process.env.DOMAIN_NAME_ON_MESSAGE || "Hello"
   });
 });
 app.get("/api/thankyoudata", (req, res) => {
   res.json({
     thankYouMessage: {
-      ThankYouHeading: process.env.ThankYouHeading || "Thank You",
-      ThankYouBody: process.env.ThankYouBody || "You will be contacted Soon"
+      ThankYouHeading: process.env.THANK_YOU_HEADING || "Thank You",
+      ThankYouBody: process.env.THANKYOUBODY || "You will be contacted Soon"
     }
   });
 });
@@ -134,14 +134,14 @@ app.post("/subscribe", (req, res) => {
     <h3>Company name: ${companyName}</h3>
     <h3>Phone Number: ${phoneNumber}</h3>
     <hr/>
-    <h3>${process.env.MessageBodyBeforeComment}</h3>
+    <h3>${process.env.MessageBodyBeforeUserComment}</h3>
    <h4 style="font-family: 'ubuntu'">${comment}</h4> 
     </div>
 `;
 
     let mail = {
       from: `${firstName} ${lastName} <${process.env.USER}>`,
-      to: `${process.env.To}`,
+      to: `${process.env.ToEmail}`,
       subject: `${process.env.Subject} ${firstName} ${lastName}`,
       html: content
     };
