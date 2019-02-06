@@ -1,0 +1,58 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "description": "For multiple apps",
+  "env": {
+    "DOMAIN_NAME_ON_MESSAGE": {
+      "required": true
+    },
+    "HOST": {
+      "required": true
+    },
+    "MessageBodyBeforeUserComment": {
+      "required": true
+    },
+    "PASSWORD": {
+      "required": true
+    },
+    "RECAPTCHA_SITE_KEY": {
+      "required": true
+    },
+    "SECRET": {
+      "required": true
+    },
+    "SMTPPORT": {
+      "required": true
+    },
+    "Subject": {
+      "required": true
+    },
+    "THANK_YOU_HEADING": {
+      "required": true
+    },
+    "THANKYOUBODY": {
+      "required": true
+    },
+    "ToEmail": {
+      "required": true
+    },
+    "USER": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "newServerSide",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
